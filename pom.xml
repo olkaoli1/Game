@@ -3,12 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>game-project</artifactId>
+    <groupId>ru.netology</groupId>
+    <artifactId>tasks-game</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <!-- Указываем Java 11 как используемую версию -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
+
     <dependencies>
-        <!-- JUnit 5 -->
+        <!-- JUnit 5 для написания и выполнения тестов -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -19,7 +26,18 @@
 
     <build>
         <plugins>
-            <!-- Maven Surefire Plugin для запуска тестов -->
+            <!-- Плагин компилятора Maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <!-- Плагин для тестирования -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
